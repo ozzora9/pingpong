@@ -1,0 +1,114 @@
+.lists-box {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 80px);
+  width: 380px;
+  padding: 24px 24px 0px 24px;
+  background-color: white;
+  border-radius: 12px;
+  /* box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.19); */
+}
+.list-title-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 12px 24px 12px;
+  border-bottom: 1px solid #bababa;
+}
+.list-title {
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+}
+.list-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 700;
+  margin-top: 24px;
+}
+.list-sub-header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 16px;
+}
+#sub-title {
+  font-size: 20px;
+}
+#sub-btn button {
+  font-weight: 600;
+  background-color: #ffc62e;
+  border: none;
+  padding: 4px 8px;
+  color: white;
+  border-radius: 24px;
+  font-size: 16px;
+  display: flex;
+  & i {
+    margin-right: 8px;
+  }
+}
+.list-search-box {
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  padding: 6px 12px;
+  width: 100%;
+}
+.list-search-txt {
+  background-color: #f4f4f4;
+  width: 100%;
+  outline: none;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  margin-left: 4px;
+}
+.list-search-btn {
+  color: #777777;
+  border: none;
+  font-size: 18px;
+  margin: 4px 6px;
+}
+.store-list {
+  list-style: none;
+  margin-top: 32px;
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+.store-item {
+  display: flex;
+  /* align-items: center; */
+  /* padding: 12px; */
+  margin-bottom: 20px;
+}
+.store-info {
+  display: flex;
+  align-items: center;
+}
+.store-img img {
+  width: 60px;
+  height: 60px;
+  background-color: #eee;
+  border-radius: 16px;
+  margin-right: 8px;
+}
+.store-name {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+.store-address {
+  color: #bababa;
+}
+.goto-icon {
+  margin-left: 20px;
+  color: #bababa;
+}

@@ -1,0 +1,31 @@
+nav {
+  z-index: 1;
+  height: 68px;
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 128px;
+  border-bottom: #d9d9d9 1px solid;
+  background-color: #ffffff;
+}
+
+.nav-logo {
+  font-size: 2rem;
+  text-decoration: none;
+  font-weight: 800;
+  color: black;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 36px;
+  a {
+    padding: 1.25rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: black;
+  }
+}

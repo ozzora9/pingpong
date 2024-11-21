@@ -1,0 +1,40 @@
+.main-section {
+  height: calc(100vh - 81px);
+  padding: 240px 0;
+}
+
+.search-form {
+  border: #e1d5c9 0.4rem solid;
+  border-radius: 8.75rem;
+}
+
+.search-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: #7a5c4e 0.2rem solid;
+  border-radius: 8.5rem;
+  padding: 1rem 1.25rem;
+  gap: 1rem;
+  font-size: 1.5rem;
+  height: 4rem;
+  width: 26rem;
+}
+
+.search-txt {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #757575;
+  width: 100%;
+  outline: none;
+  border: none;
+
+  /* &::placeholder {
+    color: #757575;
+  } */
+}
+
+.search-btn {
+  color: #7a5c4e;
+  border: none;
+}
