@@ -1,199 +1,63 @@
-import React from "react";
+import MapItem from "./MapItem";
+import { useState } from "react";
 
-const MapList = () => {
+const MapList = ({ list }) => {
+  const [search, setSearch] = useState("");
+
+  const onChangeSearch = (e) => {
+    setSearch(e.target.value);
+  };
+
+  const getFilteredData = () => {
+    if (search === "") {
+      return list;
+    }
+    return list.filter((item) =>
+      item.content.toLowerCase().includes(search.toLowerCase())
+    );
+  };
+
+  const filteredList = getFilteredData();
+
   return (
     <div>
-      <div class="lists-box">
-        <div class="list-title-box">
-          <div class="list-title">
+      <div className="lists-box">
+        <div className="list-title-box">
+          <div className="list-title">
             사람들과 인생빵집을
             <div></div>
             공유해봐요 👾
           </div>
         </div>
-        <div class="list-header">
-          <div class="list-sub-header">
+        <div className="list-header">
+          <div className="list-sub-header">
             <div id="sub-title">인생빵집 리스트</div>
             <div id="sub-btn">
               <button>
-                <div class="sub-btn-icon">
-                  <i class="fa-solid fa-plus"></i>
+                <div className="sub-btn-icon">
+                  <i className="fa-solid fa-plus"></i>
                 </div>
                 나도 추가하기
               </button>
             </div>
           </div>
-          <div class="list-search-box">
-            <span class="list-search-btn">
-              <i class="fa-solid fa-magnifying-glass"></i>{" "}
+          <div className="list-search-box">
+            <span className="list-search-btn">
+              <i className="fa-solid fa-magnifying-glass"></i>{" "}
             </span>
-            <input type="text" class="list-search-txt" placeholder="검색" />
+            <input
+              value={search}
+              onChange={onChangeSearch}
+              className="list-search-txt"
+              placeholder="검색"
+            />
           </div>
         </div>
-        <ul class="store-list">
-          <li class="store-item">
-            <div class="store-info">
-              <a href="#" class="store-img">
-                <img
-                  class="img"
-                  src="/res/images/bread_img.jpg"
-                  alt="store-img"
-                />
-              </a>
-              <div class="store-detail">
-                <p class="store-name">이성당</p>
-                <p class="store-address">전북특별자치도 군산시 중앙로 177</p>
-              </div>
-              <div class="goto-icon">
-                <i class="fa-solid fa-chevron-right"></i>
-              </div>
-            </div>
-          </li>
-          <li class="store-item">
-            <div class="store-info">
-              <a href="#" class="store-img">
-                <img
-                  class="img"
-                  src="/res/images/bread_img.jpg"
-                  alt="store-img"
-                />
-              </a>
-              <div class="store-detail">
-                <p class="store-name">이성당</p>
-                <p class="store-address">전북특별자치도 군산시 중앙로 177</p>
-              </div>
-              <div class="goto-icon">
-                <i class="fa-solid fa-chevron-right"></i>
-              </div>
-            </div>
-          </li>
-          <li class="store-item">
-            <div class="store-info">
-              <a href="#" class="store-img">
-                <img
-                  class="img"
-                  src="/res/images/bread_img.jpg"
-                  alt="store-img"
-                />
-              </a>
-              <div class="store-detail">
-                <p class="store-name">이성당</p>
-                <p class="store-address">전북특별자치도 군산시 중앙로 177</p>
-              </div>
-              <div class="goto-icon">
-                <i class="fa-solid fa-chevron-right"></i>
-              </div>
-            </div>
-          </li>
-          <li class="store-item">
-            <div class="store-info">
-              <a href="#" class="store-img">
-                <img
-                  class="img"
-                  src="/res/images/bread_img.jpg"
-                  alt="store-img"
-                />
-              </a>
-              <div class="store-detail">
-                <p class="store-name">이성당</p>
-                <p class="store-address">전북특별자치도 군산시 중앙로 177</p>
-              </div>
-              <div class="goto-icon">
-                <i class="fa-solid fa-chevron-right"></i>
-              </div>
-            </div>
-          </li>
-          <li class="store-item">
-            <div class="store-info">
-              <a href="#" class="store-img">
-                <img
-                  class="img"
-                  src="/res/images/bread_img.jpg"
-                  alt="store-img"
-                />
-              </a>
-              <div class="store-detail">
-                <p class="store-name">이성당</p>
-                <p class="store-address">전북특별자치도 군산시 중앙로 177</p>
-              </div>
-              <div class="goto-icon">
-                <i class="fa-solid fa-chevron-right"></i>
-              </div>
-            </div>
-          </li>
-          <li class="store-item">
-            <div class="store-info">
-              <a href="#" class="store-img">
-                <img
-                  class="img"
-                  src="/res/images/bread_img.jpg"
-                  alt="store-img"
-                />
-              </a>
-              <div class="store-detail">
-                <p class="store-name">이성당</p>
-                <p class="store-address">전북특별자치도 군산시 중앙로 177</p>
-              </div>
-              <div class="goto-icon">
-                <i class="fa-solid fa-chevron-right"></i>
-              </div>
-            </div>
-          </li>
-          <li class="store-item">
-            <div class="store-info">
-              <a href="#" class="store-img">
-                <img
-                  class="img"
-                  src="/res/images/bread_img.jpg"
-                  alt="store-img"
-                />
-              </a>
-              <div class="store-detail">
-                <p class="store-name">이성당</p>
-                <p class="store-address">전북특별자치도 군산시 중앙로 177</p>
-              </div>
-              <div class="goto-icon">
-                <i class="fa-solid fa-chevron-right"></i>
-              </div>
-            </div>
-          </li>
-          <li class="store-item">
-            <div class="store-info">
-              <a href="#" class="store-img">
-                <img
-                  class="img"
-                  src="/res/images/bread_img.jpg"
-                  alt="store-img"
-                />
-              </a>
-              <div class="store-detail">
-                <p class="store-name">이성당</p>
-                <p class="store-address">전북특별자치도 군산시 중앙로 177</p>
-              </div>
-              <div class="goto-icon">
-                <i class="fa-solid fa-chevron-right"></i>
-              </div>
-            </div>
-          </li>
-          <li class="store-item">
-            <div class="store-info">
-              <a href="#" class="store-img">
-                <img
-                  class="img"
-                  src="/res/images/bread_img.jpg"
-                  alt="store-img"
-                />
-              </a>
-              <div class="store-detail">
-                <p class="store-name">이성당</p>
-                <p class="store-address">전북특별자치도 군산시 중앙로 177</p>
-              </div>
-              <div class="goto-icon">
-                <i class="fa-solid fa-chevron-right"></i>
-              </div>
-            </div>
-          </li>
-        </ul>
+        <div className="items_wrapper">
+          {filteredList.map((item) => {
+            return <MapItem key={item.id} {...item} />;
+          })}
+        </div>
       </div>
     </div>
   );
