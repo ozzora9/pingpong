@@ -1,18 +1,25 @@
 import React, { useState } from "react";
 
-const CardLarge = ({ subtitle, title, note, img, color, active }) => {
+const CardLarge = ({
+  subtitle,
+  title,
+  note,
+  imgLg,
+  imgSm,
+  type,
+  active,
+}) => {
   const [isActive, setIsActive] = useState(active);
 
-  const handleClick = (event) => {
+  const onClickCard = (e) => {
     setIsActive(!isActive);
   };
 
   if (isActive) {
     return (
       <div
-        onClick={handleClick}
-        className="card-large card-collapse card-location"
-        style={{ backgroundColor: color }}
+        onClick={onClickCard}
+        className={`card-large card-collapse card-${type}`}
       >
         <div className="collapse-txt">
           <div className="txt-radius">
@@ -22,22 +29,21 @@ const CardLarge = ({ subtitle, title, note, img, color, active }) => {
           <div className="card-note">{note}</div>
         </div>
         <div className="collapse-img">
-          <img style={{ display: "flex" }} src={img} />
+          <img style={{ display: "flex" }} src={imgLg} alt="" />
         </div>
       </div>
     );
   } else {
     return (
       <div
-        onClick={handleClick}
-        className="card-large card-primary"
-        style={{ backgroundColor: color }}
+        onClick={onClickCard}
+        className={`card-large card-primary card-${type}`}
       >
         <div className="primary-txt">
           <h2 className="card-note">{title}</h2>
         </div>
         <div className="primary-img">
-          <img src={img} alt="" />
+          <img src={imgSm} alt="" />
         </div>
       </div>
     );

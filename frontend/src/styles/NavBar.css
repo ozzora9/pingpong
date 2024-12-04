@@ -13,8 +13,12 @@ nav {
 
 .nav-logo {
   font-size: 2rem;
+  /* font-family: "Pretendard"; */
+  font-family: "Bagel Fat One", system-ui;
+  font-size: 40px;
   text-decoration: none;
-  font-weight: 800;
+  /* font-weight: 800; */
+  font-weight: 400;
   color: black;
 }
 

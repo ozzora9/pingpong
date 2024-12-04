@@ -5,6 +5,6 @@ app.listen(8080, () => {
   console.log("http://localhost:8080 에서 서버 실행중");
 });
 
-app.get("/MyPost", (req, res) => {
-  res.sendFile("hello");
+app.get("/", (req, res) => {
+  res.send("hello");
 });

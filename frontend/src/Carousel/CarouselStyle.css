@@ -1,33 +1,32 @@
 .embla {
-  max-width: 48rem;
   margin: auto;
-  --slide-height: 19rem;
-  --slide-spacing: 1rem;
-  --slide-size: 100%;
-  border: 1px solid black;
+  height: 200px;
+  width: 100vw;
+  --slide-spacing: 32px;
 }
 .embla__viewport {
   overflow: hidden;
 }
 .embla__container {
   display: flex;
+  justify-content: center;
   touch-action: pan-y pinch-zoom;
-  margin-left: calc(var(--slide-spacing) * -1);
+  margin-left: 32px;
 }
 .embla__slide {
   transform: translate3d(0, 0, 0);
-  flex: 0 0 var(--slide-size);
-  min-width: 0;
-  padding-left: var(--slide-spacing);
+  padding-left: 32px;
 }
 .embla__slide__number {
   box-shadow: inset 0 0 0 0.2rem var(--detail-medium-contrast);
+  border: 1px solid black;
   border-radius: 1.8rem;
   font-size: 4rem;
   font-weight: 600;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: var(--slide-height);
+  height: 172px;
+  width: 260px;
   user-select: none;
 }

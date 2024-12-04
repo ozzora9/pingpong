@@ -13,7 +13,7 @@ const MapList = ({ list }) => {
       return list;
     }
     return list.filter((item) =>
-      item.content.toLowerCase().includes(search.toLowerCase())
+      item.name.toLowerCase().includes(search.toLowerCase())
     );
   };
 

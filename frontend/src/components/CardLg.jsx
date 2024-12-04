@@ -1,91 +1,51 @@
-import React from "react";
 import CardLarge from "./CardLarge";
 
 const CardLg = () => {
   return (
-    <div className="card-section-lg">
+    <>
       <div className="card-box card-grid">
-        {/* <div className="card-collapse card-location">
-            <div className="collapse-txt">
-              <div className="txt-radius">
-                <p>지도를 통한 검색 기능</p>
-              </div>
-              <div className="card-sub-title">
-                <p>집 근처 빵 맛집을</p>
-                <p>찾아낼래</p>
-              </div>
-              <div className="card-note">
-                <p>지도 위 마커를 따라가면? 나만의 빵 맛집 발견!</p>
-                <p>집 주변 나만의 인생빵집을 찾아보세요.</p>
-              </div>
-            </div>
-            <div className="collapse-img">
-              <img style={{ display: "flex" }} src="/res/images/LOCATION.png" />
-            </div>
-          </div> */}
         <CardLarge
-          subtitle="지도를 통한 검색 기능"
-          title={"집 근처 빵 맛집을\n찾아낼래"}
+          subtitle={"지도를 통한 검색 기능"}
+          title={"집 근처 빵 맛집을 찾아낼래"}
           note={
-            "지도 위 마커를 따라가면? 나만의 빵 맛집 발견!\n집 주변 나만의 인생빵집을 찾아보세요."
+            "지도 위 마커를 따라가면? 나만의 빵 맛집 발견! 집 주변 나만의 인생빵집을 찾아보세요."
           }
-          color="#ff8a65"
-          img="/res/images/LOCATION.png"
-          active
+          type={"location"}
+          imgLg={"/res/images/LOCATION.png"}
+          imgSm={"/res/images/LOCATION-sm.png"}
         />
         <CardLarge
-          subtitle="지도를 통한 검색 기능"
-          title={"집 근처 빵 맛집을\n찾아낼래"}
+          subtitle={"입맛 맞춤형 취향표"}
+          title={"내 입에 딱 맞는 빵 어디 없나?"}
           note={
-            "지도 위 마커를 따라가면? 나만의 빵 맛집 발견!\n집 주변 나만의 인생빵집을 찾아보세요."
+            "나와 딱 맞는 빵 찾기 대장정! 취향표 작성을 통해 내 입맛을 알아보고 다양한 빵집을 추천받아요!"
           }
-          color="#ff8a65"
-          img="/res/images/LOCATION.png"
+          type={"favor"}
+          imgLg={"/res/images/FAVOR.png"}
+          imgSm={"/res/images/FAVOR-sm.png"}
         />
         <CardLarge
-          subtitle="지도를 통한 검색 기능"
-          title={"집 근처 빵 맛집을\n찾아낼래"}
+          subtitle={"빵메이트 서비스"}
+          title={"혼자 가던 빵축제도 이젠 함께!"}
           note={
-            "지도 위 마커를 따라가면? 나만의 빵 맛집 발견!\n집 주변 나만의 인생빵집을 찾아보세요."
+            "빵메이트야 어디있니...? 프로필의 취향 정보를 기반으로 나와 천생연분이 될 빵메이트를 구해보세요!"
           }
-          color="#ff8a65"
-          img="/res/images/LOCATION.png"
+          type={"mate"}
+          imgLg={"/res/images/MATE.png"}
+          imgSm={"/res/images/MATE-sm.png"}
         />
         <CardLarge
-          subtitle="지도를 통한 검색 기능"
-          title={"집 근처 빵 맛집을\n찾아낼래"}
+          subtitle={"빵글빵글 게시판"}
+          title={"#베이커리 #분좋카 #MOOD"}
           note={
-            "지도 위 마커를 따라가면? 나만의 빵 맛집 발견!\n집 주변 나만의 인생빵집을 찾아보세요."
+            "빵과 글의 융합, 빵글빵글 게시판! 인생빵집에서 느낀 분위기를 자신만의 언어로 다른 사용자들과 함께 공유해보세요."
           }
-          color="#ff8a65"
-          img="/res/images/LOCATION.png"
+          type={"mood"}
+          imgLg={"/res/images/MOOD.png"}
+          imgSm={"/res/images/MOOD-sm.png"}
         />
-        {/* <div className="card-primary card-mate">
-            <div className="primary-txt">
-              <h2 className="card-note">혼자 가던 빵축제도 이젠 함께!</h2>
-            </div>
-            <div className="primary-img">
-              <img src="/res/images/MATE-sm.png" alt="" />
-            </div>
-          </div>
-          <div className="card-primary card-mood">
-            <div className="primary-txt">
-              <h2 className="card-note">#베이커리 #분좋카 #MOOD</h2>
-            </div>
-            <div className="primary-img">
-              <img src="/res/images/MOOD-sm.png" alt="" />
-            </div>
-          </div>
-          <div className="card-primary card-location">
-            <div className="primary-txt">
-              <h2 className="card-note">집 근처 빵맛집을 찾아낼래</h2>
-            </div>
-            <div className="primary-img">
-              <img src="/res/images/LOCATION.png" alt="" />
-            </div>
-          </div> */}
       </div>
-    </div>
+    </>
   );
 };
 

@@ -1,4 +1,8 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
 import "./App.css";
 import NavBar from "./components/NavBar";
 import MainPage from "./pages/MainPage";
@@ -7,7 +11,9 @@ import TastePage from "./pages/TastePage";
 import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
 import CarouselPage from "./pages/CarouselPage";
+import Footer from "./components/Footer";
 import "./styles/NavBar.css";
+import "./styles/Footer.css";
 
 const App = () => {
   return (
@@ -22,6 +28,7 @@ const App = () => {
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/carousel" element={<CarouselPage />} />
         </Routes>
+        <Footer />
       </div>
     </Router>
   );

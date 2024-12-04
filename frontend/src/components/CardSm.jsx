@@ -14,7 +14,9 @@ const CardSm = () => {
       <a href="/" className="card">
         <div className="card-info">
           <div className="card-title">이성당</div>
-          <div className="card-sub">전북특별자치도 군산시 중앙로 177</div>
+          <div className="card-sub">
+            전북특별자치도 군산시 중앙로 177
+          </div>
         </div>
         <img src="./res/images/bread_img.jpg" alt="" />
       </a>
