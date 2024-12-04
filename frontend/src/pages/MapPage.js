@@ -92,11 +92,11 @@ const mockList = [
 ];
 
 const MapPage = () => {
-  const [list, setList] = useState(mockList);
+  // const [list, setList] = useState(mockList);
 
   return (
     <div style={{ display: "flex" }}>
-      <MapList list={list} />
+      <MapList list={mockList} />
       <Maps />
     </div>
   );

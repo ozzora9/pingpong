@@ -39,20 +39,16 @@ const SearchBar = () => {
   }, [count, isDeleting]);
 
   return (
-    <div className="container">
-      <div className="content main-section">
-        <div className="search-form">
-          <div className="search-box">
-            <span className="search-btn">
-              <i className="bi bi-search"></i>
-            </span>
-            <input
-              type="text"
-              className="search-txt"
-              placeholder={text}
-            />
-          </div>
-        </div>
+    <div className="search-form">
+      <div className="search-box">
+        <span className="search-btn">
+          <i className="bi bi-search"></i>
+        </span>
+        <input
+          type="text"
+          className="search-txt"
+          placeholder={text}
+        />
       </div>
     </div>
   );
