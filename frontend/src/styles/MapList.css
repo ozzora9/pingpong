@@ -107,6 +107,7 @@
   margin-bottom: 5px;
 }
 .store-address {
+  word-break: keep-all;
   color: #bababa;
 }
 .goto-icon {

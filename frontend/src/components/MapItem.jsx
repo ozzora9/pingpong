@@ -1,4 +1,4 @@
-const MapItem = ({ id, name, src, location }) => {
+const MapItem = ({ id, name, src, sub }) => {
   return (
     <div>
       <ul className="store-list">
@@ -9,7 +9,7 @@ const MapItem = ({ id, name, src, location }) => {
             </a>
             <div className="store-detail">
               <p className="store-name">{name}</p>
-              <p className="store-address">{location}</p>
+              <p className="store-address">{sub}</p>
             </div>
           </div>
           <div className="goto-icon">
