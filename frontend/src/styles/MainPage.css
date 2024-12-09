@@ -7,7 +7,8 @@ body::-webkit-scrollbar {
   align-items: center;
   justify-content: center;
   /* width: 100vw; */
-  height: calc(100vh - 68px);
+  height: calc(100vh - 136px);
+  /* 허전함 + 스크롤 가능 알리기 */
   overflow-y: scroll;
   scrollbar-width: none;
 }

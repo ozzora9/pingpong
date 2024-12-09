@@ -50,6 +50,10 @@
   & i {
     margin-right: 8px;
   }
+  &:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s;
+  }
 }
 .list-search-box {
   background-color: #f4f4f4;

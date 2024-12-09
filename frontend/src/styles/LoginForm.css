@@ -40,6 +40,7 @@
   border: none;
   width: 85%;
   height: 100%;
+  font-size: 14px;
 }
 
 .input:focus {
@@ -47,7 +48,8 @@
 }
 
 .inputForm:focus-within {
-  border: 1.5px solid #ffc62e;
+  /* border: 1.5px solid #ffc62e; */
+  border: 1.5px solid #7a5c4e;
 }
 
 .flex-row {

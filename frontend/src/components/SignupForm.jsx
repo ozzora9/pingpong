@@ -11,7 +11,7 @@ const SignupForm = () => {
         <input
           type="text"
           className="input"
-          placeholder="Enter your Name"
+          placeholder="사용하실 닉네임을 입력해주세요"
         />
       </div>
       <div className="flex-column">
@@ -31,7 +31,7 @@ const SignupForm = () => {
         <input
           type="text"
           className="input"
-          placeholder="Enter your Email"
+          placeholder="이메일을 입력해주세요"
         />
       </div>
       <div className="flex-column">
@@ -50,7 +50,7 @@ const SignupForm = () => {
         <input
           type="password"
           className="input"
-          placeholder="Enter your Password"
+          placeholder="대소문자 숫자가 포함된 8~16자 이내"
         />
       </div>
       <div className="flex-column">
@@ -69,7 +69,7 @@ const SignupForm = () => {
         <input
           type="password"
           className="input"
-          placeholder="Enter your Password"
+          placeholder="위와 동일한 비밀번호를 입력해주세요"
         />
       </div>
       <button className="button-submit">회원가입</button>
@@ -152,7 +152,7 @@ const SignupForm = () => {
           style={{ objectFit: "cover" }}
           height={"100%"}
           width={"100%"}
-          borderRadius={"5px"}
+          borderradius={"5px"}
           src=".\res\images\kakao_login_large_wide.png"
           alt=""
         />

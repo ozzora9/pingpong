@@ -78,7 +78,7 @@ const Taste = () => {
             <textarea
               type="text"
               placeholder="유행에 발목잡힌 소금빵 망령? 그게 나야~ (둠바둠바두비두바)
-                빵에 입빵! 하게 된 여러분들의 이야기를 들려주세요! 빵메이트 매칭에 도움이 될지도...? (소근소근)"
+              빵에 입빵! 하게 된 여러분들의 이야기를 들려주세요! 빵메이트 매칭에 도움이 될지도...? (소근소근)"
               className="taste-input"
               id="reason"
             />
@@ -94,7 +94,9 @@ const Taste = () => {
               id="intro"
             />
           </div>
-          <button className="submit-btn">취향표 제출하기</button>
+          <div className="submit-btn">
+            <button>취향표 제출하기</button>
+          </div>
         </form>
       </div>
     </div>

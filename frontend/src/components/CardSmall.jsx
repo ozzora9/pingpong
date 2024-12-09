@@ -1,5 +1,4 @@
 const CardSmall = ({ store }) => {
-  console.log(store.name);
   return (
     <a href="/" className="card">
       <div className="card-info">

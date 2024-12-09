@@ -18,7 +18,7 @@ const LoginForm = () => {
         <input
           type="text"
           className="input"
-          placeholder="Enter your Email"
+          placeholder="이메일 주소를 입력해주세요."
         />
       </div>
       <div className="flex-column">
@@ -37,7 +37,7 @@ const LoginForm = () => {
         <input
           type="password"
           className="input"
-          placeholder="Enter your Password"
+          placeholder="비밀번호를 입력해주세요."
         />
         <svg
           viewBox="0 0 576 512"
@@ -52,7 +52,7 @@ const LoginForm = () => {
           <input type="checkbox" />
           <label>아이디 기억하기 </label>
         </div>
-        <span className="span">비밀번호를 잊으셨나요?</span>
+        {/* <span className="span">비밀번호를 잊으셨나요?</span> */}
       </div>
       <button className="button-submit">로그인</button>
       <p className="p">
@@ -68,7 +68,7 @@ const LoginForm = () => {
           style={{ objectFit: "cover" }}
           height={"100%"}
           width={"100%"}
-          borderRadius={"5px"}
+          borderradius={"5px"}
           src=".\res\images\kakao_login_large_wide.png"
           alt=""
         />

@@ -55,3 +55,27 @@
   height: 60px;
   resize: none;
 }
+
+.submit-btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 12px;
+}
+.submit-btn button {
+  cursor: pointer;
+  font-weight: 600;
+  background-color: #ffc62e;
+  border: none;
+  padding: 8px 12px;
+  color: white;
+  border-radius: 6px;
+  font-size: 16px;
+  display: flex;
+  & i {
+    margin-right: 8px;
+  }
+  &:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s;
+  }
+}

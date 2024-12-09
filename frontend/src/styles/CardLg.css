@@ -108,6 +108,7 @@
   font-size: 2.25rem;
   font-weight: 700;
   line-height: 45px;
+  word-break: keep-all;
 }
 
 .card-note {
@@ -123,6 +124,7 @@
 }
 
 .collapse-img {
+  align-content: center;
   width: 330px;
 }
 

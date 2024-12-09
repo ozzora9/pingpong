@@ -13,11 +13,9 @@ nav {
 
 .nav-logo {
   font-size: 2rem;
-  /* font-family: "Pretendard"; */
   font-family: "Bagel Fat One", system-ui;
   font-size: 40px;
   text-decoration: none;
-  /* font-weight: 800; */
   font-weight: 400;
   color: black;
 }
@@ -28,8 +26,14 @@ nav {
   a {
     padding: 1.25rem;
     font-size: 1.25rem;
-    font-weight: 600;
+    font-weight: 700;
     text-decoration: none;
     color: black;
+  }
+  a:hover {
+    color: #868b94;
+  }
+  a:focus {
+    color: #7a5c4e;
   }
 }

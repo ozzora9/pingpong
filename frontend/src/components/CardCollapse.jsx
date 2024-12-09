@@ -19,8 +19,8 @@ const CardCollapse = () => {
                 <p>집 주변 나만의 인생빵집을 찾아보세요.</p>
               </div>
             </div>
-            <div className="collapse-img">
-              <img style={{ display: "flex" }} src="/res/images/LOCATION.png" />
+            <div className="collapse-img" style={{ display: "flex" }}>
+              <img src="/res/images/LOCATION.png" />
             </div>
           </div>
         </div>
