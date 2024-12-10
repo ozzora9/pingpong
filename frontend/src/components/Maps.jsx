@@ -1,9 +1,9 @@
 import { Map, MapMarker } from "react-kakao-maps-sdk";
 
-const Maps = ({ list }) => {
+const Maps = ({ list, center, setCenter }) => {
   return (
     <Map
-      center={{ lat: 35.9461621735802, lng: 126.68328372447189 }}
+      center={center}
       style={{ width: "100vw", height: "calc(100vh - 68px)" }}
       level={3}
     >

@@ -1,7 +1,7 @@
-import MapItem from "./MapItem";
 import { useState } from "react";
+import MapItem from "./MapItem";
 
-const MapList = ({ list }) => {
+const MapList = ({ list, setCenter }) => {
   const [search, setSearch] = useState("");
 
   const onChangeSearch = (e) => {
@@ -54,9 +54,9 @@ const MapList = ({ list }) => {
           </div>
         </div>
         <div className="items_wrapper">
-          {filteredList.map((item) => {
-            return <MapItem key={item.id} {...item} />;
-          })}
+          {filteredList.map((item) => (
+            <MapItem key={item.id} {...item} setCenter={setCenter} />
+          ))}
         </div>
       </div>
     </div>

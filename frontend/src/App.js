@@ -22,6 +22,7 @@ const storeList = [
     sub: "전북특별자치도 군산시 중앙로 177",
     lat: 35.98715192,
     lng: 126.7112342,
+    src: "/res/images/bread_img.jpg",
   },
   {
     id: 1,
@@ -29,6 +30,7 @@ const storeList = [
     sub: "인천광역시 중구 은하수로 10 더테라스프라자 177",
     lat: 37.4919681,
     lng: 126.5813687,
+    src: "/res/images/bread_img.jpg",
   },
   {
     id: 2,
@@ -36,6 +38,7 @@ const storeList = [
     sub: "대전광역시 중구 대종로 480번길 15",
     lat: 36.3277658,
     lng: 127.427359,
+    src: "/res/images/bread_img.jpg",
   },
   {
     id: 3,
@@ -43,6 +46,23 @@ const storeList = [
     sub: "제주특별자치도 제주시 한림읍 한림로 542-1",
     lat: 33.4059201,
     lng: 126.2564901,
+    src: "/res/images/bread_img.jpg",
+  },
+  {
+    id: 3,
+    name: "우무",
+    sub: "제주특별자치도 제주시 한림읍 한림로 542-1",
+    lat: 33.4059201,
+    lng: 126.2564901,
+    src: "/res/images/bread_img.jpg",
+  },
+  {
+    id: 3,
+    name: "우무",
+    sub: "제주특별자치도 제주시 한림읍 한림로 542-1",
+    lat: 33.4059201,
+    lng: 126.2564901,
+    src: "/res/images/bread_img.jpg",
   },
 ];
 
