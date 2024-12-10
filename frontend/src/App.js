@@ -48,22 +48,6 @@ const storeList = [
     lng: 126.2564901,
     src: "/res/images/bread_img.jpg",
   },
-  {
-    id: 3,
-    name: "우무",
-    sub: "제주특별자치도 제주시 한림읍 한림로 542-1",
-    lat: 33.4059201,
-    lng: 126.2564901,
-    src: "/res/images/bread_img.jpg",
-  },
-  {
-    id: 3,
-    name: "우무",
-    sub: "제주특별자치도 제주시 한림읍 한림로 542-1",
-    lat: 33.4059201,
-    lng: 126.2564901,
-    src: "/res/images/bread_img.jpg",
-  },
 ];
 
 const App = () => {

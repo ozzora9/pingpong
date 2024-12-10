@@ -9,7 +9,7 @@ const MapItem = ({ id, name, src, sub, lat, lng, setCenter }) => {
         <li className="store-item">
           <div className="store-info">
             <a href="#" className="store-img">
-              <img src={src} alt="store image" />
+              <img src={src} alt="store" />
             </a>
             <div className="store-detail">
               <p className="store-name" onClick={handleClick}>

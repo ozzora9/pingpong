@@ -1,12 +1,30 @@
 import { Map, MapMarker } from "react-kakao-maps-sdk";
 
-const Maps = ({ list, center, setCenter }) => {
+const Maps = ({ list, center, setCenter, currentLocation }) => {
   return (
     <Map
       center={center}
       style={{ width: "100vw", height: "calc(100vh - 68px)" }}
       level={3}
     >
+      {currentLocation && (
+        <MapMarker
+          position={currentLocation}
+          image={{
+            src: "https://i.ibb.co/bKKZGTP/Group-43.png",
+            size: {
+              width: 40,
+              height: 40,
+            },
+            // options: {
+            //   offset: {
+            //     x: 280,
+            //     y: 36,
+            //   },
+            // },
+          }}
+        />
+      )}
       {list.map((store) => (
         <MapMarker
           key={store.id}
