@@ -14,7 +14,6 @@ import CarouselPage from "./pages/CarouselPage";
 import Footer from "./components/Footer";
 import "./styles/NavBar.css";
 import "./styles/Footer.css";
-import FlowerAnimation from "./components/FlowAnimation";
 const storeList = [
   {
     id: 0,
@@ -23,7 +22,7 @@ const storeList = [
     num: "063-445-2772",
     lat: 35.98715192,
     lng: 126.7112342,
-    src: "/res/images/bread_img.jpg",
+    src: "/res/images/store/bread_img.jpg",
   },
   {
     id: 1,
@@ -32,7 +31,7 @@ const storeList = [
     num: "032-746-2244",
     lat: 37.4919681,
     lng: 126.5813687,
-    src: "/res/images/bread_img.jpg",
+    src: "/res/images/store/bread_img.jpg",
   },
   {
     id: 2,
@@ -41,7 +40,7 @@ const storeList = [
     num: "1588-8069",
     lat: 36.3277658,
     lng: 127.427359,
-    src: "/res/images/bread_img.jpg",
+    src: "/res/images/store/bread_img.jpg",
   },
   {
     id: 3,
@@ -50,7 +49,7 @@ const storeList = [
     num: "010-6705-0064",
     lat: 33.4059201,
     lng: 126.2564901,
-    src: "/res/images/bread_img.jpg",
+    src: "/res/images/store/bread_img.jpg",
   },
 ];
 
