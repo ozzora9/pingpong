@@ -31,9 +31,14 @@
   width: 260px;
   overflow: hidden;
   transition: 0.3s;
-  &:hover .card-info {
-    opacity: 1;
+
+  &:hover {
+    transform: translateY(-10px);
   }
+  &:hover .card-info {
+    opacity: 0;
+  }
+
   & img {
     height: 100%;
     width: 100%;
@@ -49,6 +54,6 @@
   background-color: rgb(0, 0, 0, 0.4);
   color: white;
   position: absolute;
-  opacity: 0;
+  opacity: 1;
   transition: 0.3s;
 }
