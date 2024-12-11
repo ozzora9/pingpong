@@ -25,14 +25,19 @@
   display: flex;
   position: relative;
   height: 187px;
+  width: 100%;
   overflow: hidden;
 }
 .modal-title-img img {
   height: 100%;
+  width: 100%;
   object-fit: cover;
 }
 .modal-title-img-shadow {
-  &::before {
+  height: 100%;
+  width: 100%;
+  &::before,
+  &::after {
     position: absolute;
     top: 0;
     right: 0;
@@ -41,35 +46,37 @@
     height: 93px;
     background: linear-gradient(
       to bottom,
-      rgba(0, 0, 0, 0modal-3),
+      rgba(0, 0, 0, 0.3),
       rgba(0, 0, 0, 0)
     );
     content: "";
   }
-  &::after {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 10;
-    background: rgba(0, 0, 0, 0modal-03);
-    content: "";
-  }
 }
 .modal-title {
-  padding: 16px;
+  padding: 16px 0 0 24px;
   font-size: 24px;
   font-weight: 700;
 }
 .modal-title-num {
   font-size: 16px;
   color: #ffc62e;
-  margin-bottom: 4px;
+  margin-bottom: 8px;
 }
 .modal-title-location {
   margin-top: 4px;
   font-size: 16px;
   font-weight: 500;
   color: #bababa;
+}
+.modal-title-box {
+  display: flex;
+}
+
+.star {
+  padding: 16px 24px 0 0;
+}
+.star i {
+  cursor: pointer;
+  font-size: 24px;
+  color: #ffc62e;
 }

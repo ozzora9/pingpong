@@ -1,0 +1,21 @@
+.bread {
+  position: absolute;
+  top: -10%;
+  left: 50%; /* 기본 위치 */
+  width: 40px; /* 기본 크기 */
+  height: auto;
+  animation-name: fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(var(--rotate)); /* 랜덤 회전 */
+    opacity: 0;
+  }
+}

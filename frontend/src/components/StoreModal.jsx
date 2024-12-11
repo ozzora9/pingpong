@@ -1,6 +1,13 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 const StoreModal = ({ isOpen, onClose, storeInfo }) => {
+  const [isStar, setIsStar] = useState(false);
+
   if (!isOpen) return null;
+
+  const toggleStar = () => {
+    setIsStar((prev) => !prev);
+  };
 
   return (
     <div className="modal-container" onClick={onClose}>
@@ -21,14 +28,8 @@ const StoreModal = ({ isOpen, onClose, storeInfo }) => {
           ></i>
         </div>
         <div className="modal-title-img">
-          <Link to="#" className="title-img-shadow">
-            <img src="\res\images\bread_img2.jpg" alt="" />
-          </Link>
-          <Link to="#" className="title-img-shadow">
-            <img src="\res\images\bread_img2.jpg" alt="" />
-          </Link>
-          <Link to="#" className="title-img-shadow">
-            <img src="\res\images\bread_img2.jpg" alt="" />
+          <Link to="#" className="modal-title-img-shadow">
+            <img src="\res\images\store\bread_img2.jpg" alt="" />
           </Link>
         </div>
         <div className="modal-title-box">
@@ -39,6 +40,14 @@ const StoreModal = ({ isOpen, onClose, storeInfo }) => {
               {storeInfo.address}
             </div>
           </div>
+          <div style={{ flex: "1 0 0" }}></div>
+          <div className="star">
+            <i
+              className={`fa-${isStar ? "solid" : "regular"} fa-star`}
+              onClick={toggleStar}
+            ></i>
+          </div>
+          <div></div>
         </div>
       </div>
     </div>
