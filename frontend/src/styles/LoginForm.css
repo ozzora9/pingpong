@@ -19,6 +19,11 @@
   align-self: flex-end;
 }
 
+.flex-column {
+  display: flex;
+  justify-content: space-between;
+}
+
 .flex-column > label {
   color: #151717;
   font-weight: 600;
@@ -32,6 +37,7 @@
   align-items: center;
   padding-left: 10px;
   transition: 0.2s ease-in-out;
+  /* margin: 12px 0; */
 }
 
 .input {
@@ -123,4 +129,24 @@
   display: flex;
   align-items: center;
   gap: 4px;
+}
+
+.error {
+  margin-left: 8px;
+  color: red;
+  font-size: 14px;
+}
+
+.line {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.line:before,
+.line:after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #ccc;
+  margin: 0 10px;
 }
