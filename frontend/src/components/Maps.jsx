@@ -16,12 +16,6 @@ const Maps = ({ list, center, setCenter, currentLocation }) => {
               width: 40,
               height: 40,
             },
-            // options: {
-            //   offset: {
-            //     x: 280,
-            //     y: 36,
-            //   },
-            // },
           }}
         />
       )}

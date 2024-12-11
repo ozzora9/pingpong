@@ -1,7 +1,7 @@
 import { useState } from "react";
 import MapItem from "./MapItem";
 
-const MapList = ({ list, setCenter }) => {
+const MapList = ({ list, setCenter, onOpenModal }) => {
   const [search, setSearch] = useState("");
 
   const onChangeSearch = (e) => {
@@ -55,7 +55,12 @@ const MapList = ({ list, setCenter }) => {
         </div>
         <div className="items_wrapper">
           {filteredList.map((item) => (
-            <MapItem key={item.id} {...item} setCenter={setCenter} />
+            <MapItem
+              key={item.id}
+              {...item}
+              setCenter={setCenter}
+              onOpenModal={onOpenModal}
+            />
           ))}
         </div>
       </div>

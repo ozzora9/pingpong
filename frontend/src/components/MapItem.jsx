@@ -1,6 +1,20 @@
-const MapItem = ({ id, name, src, sub, lat, lng, setCenter }) => {
+const MapItem = ({
+  id,
+  name,
+  num,
+  src,
+  sub,
+  lat,
+  lng,
+  setCenter,
+  onOpenModal,
+}) => {
   const handleClick = () => {
     setCenter({ lat, lng });
+  };
+
+  const handleModalOpen = () => {
+    onOpenModal({ id, name, src, address: sub, num });
   };
 
   return (
@@ -8,7 +22,11 @@ const MapItem = ({ id, name, src, sub, lat, lng, setCenter }) => {
       <ul className="store-list">
         <li className="store-item">
           <div className="store-info">
-            <a href="#" className="store-img">
+            <a
+              href="#"
+              className="store-img"
+              onClick={handleModalOpen}
+            >
               <img src={src} alt="store" />
             </a>
             <div className="store-detail">
@@ -18,7 +36,7 @@ const MapItem = ({ id, name, src, sub, lat, lng, setCenter }) => {
               <p className="store-address">{sub}</p>
             </div>
           </div>
-          <div className="goto-icon">
+          <div className="goto-icon" onClick={handleModalOpen}>
             <i className="fa-solid fa-chevron-right"></i>
           </div>
         </li>

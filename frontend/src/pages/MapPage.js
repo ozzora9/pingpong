@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import Maps from "../components/Maps";
 import MapList from "../components/MapList";
+import StoreModal from "../components/StoreModal";
 import "../styles/MapList.css";
+import "../styles/StoreModal.css";
 
 const MapPage = ({ storeList }) => {
   const [selectedItem, setSelectedItem] = useState();
@@ -10,6 +12,8 @@ const MapPage = ({ storeList }) => {
     lng: 126.5813687,
   });
   const [currentLocation, setCurrentLocation] = useState();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalData, setModalData] = useState(null);
 
   useEffect(() => {
     if (navigator.geolocation) {
@@ -28,12 +32,23 @@ const MapPage = ({ storeList }) => {
     }
   }, []);
 
+  const handleOpenModal = (store) => {
+    setModalData(store);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setModalData(null);
+    setIsModalOpen(false);
+  };
+
   return (
     <div style={{ display: "flex" }}>
       <MapList
         list={storeList}
         onSelectItem={setSelectedItem}
         setCenter={setCenter}
+        onOpenModal={handleOpenModal}
       />
       <Maps
         list={storeList}
@@ -42,6 +57,13 @@ const MapPage = ({ storeList }) => {
         setCenter={setCenter}
         currentLocation={currentLocation}
       />
+      {isModalOpen && (
+        <StoreModal
+          isOpen={isModalOpen}
+          onClose={handleCloseModal}
+          storeInfo={modalData}
+        />
+      )}
     </div>
   );
 };
