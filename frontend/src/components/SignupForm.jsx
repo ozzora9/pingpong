@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const SignupForm = () => {
@@ -22,33 +22,39 @@ const SignupForm = () => {
 
   const navigate = useNavigate();
 
-  const validateForm = () => {
-    const newErrors = {};
+  const validateField = (name, value) => {
+    let error = "";
 
-    // 닉네임 검사
-    if (!formData.nickname)
-      newErrors.nickname = "닉네임을 입력해주세요.";
-
-    // 이메일 검사
-    if (!formData.email || !/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = "유효한 이메일을 입력해주세요.";
+    if (name === "nickname") {
+      if (!value) error = "닉네임을 입력해주세요.";
+    } else if (name === "email") {
+      if (!value || !/\S+@\S+\.\S+/.test(value)) {
+        error = "유효한 이메일을 입력해주세요.";
+      }
+    } else if (name === "password") {
+      const passwordRegex =
+        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,16}$/;
+      if (!value) {
+        error = "비밀번호를 입력해주세요.";
+      } else if (!passwordRegex.test(value)) {
+        error =
+          "영문자, 숫자, 특수기호를 포함해 8~16자리를 입력해주세요.";
+      }
+    } else if (name === "confirmPassword") {
+      if (value !== formData.password) {
+        error = "비밀번호가 일치하지 않습니다.";
+      }
     }
 
-    const passwordRegex =
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,16}$/;
-    if (!formData.password) {
-      newErrors.password = "비밀번호를 입력해주세요.";
-    } else if (!passwordRegex.test(formData.password)) {
-      newErrors.password =
-        "영문자, 숫자, 특수기호를 포함해 8~16자리를 입력해주세요.";
-    }
+    setErrors((prevErrors) => ({
+      ...prevErrors,
+      [name]: error,
+    }));
+  };
 
-    if (formData.password !== formData.confirmPassword) {
-      newErrors.confirmPassword = "비밀번호가 일치하지 않습니다.";
-    }
-
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
+  const handleBlur = (e) => {
+    const { name, value } = e.target;
+    validateField(name, value);
   };
 
   const handleChange = (e) => {
@@ -61,13 +67,13 @@ const SignupForm = () => {
 
   useEffect(() => {
     if (formData.password || formData.confirmPassword) {
-      validateForm();
+      validateField();
     }
   }, [formData.password, formData.confirmPassword]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (validateForm()) {
+    if (validateField()) {
       console.log("폼 제출: ", formData);
       setFormData({
         nickname: "",
@@ -107,6 +113,7 @@ const SignupForm = () => {
           placeholder="사용하실 닉네임을 입력해주세요"
           value={formData.nickname}
           onChange={handleChange}
+          onBlur={handleBlur}
         />
       </div>
       <div className="flex-column">
@@ -133,6 +140,7 @@ const SignupForm = () => {
           placeholder="이메일을 입력해주세요"
           value={formData.email}
           onChange={handleChange}
+          onBlur={handleBlur}
         />
       </div>
       <div className="flex-column">
@@ -158,6 +166,7 @@ const SignupForm = () => {
           placeholder="대소문자 숫자가 포함된 8~16자 이내"
           value={formData.password}
           onChange={handleChange}
+          onBlur={handleBlur}
         />
         <i
           className={`fa-solid ${
@@ -189,6 +198,7 @@ const SignupForm = () => {
           placeholder="위와 동일한 비밀번호를 입력해주세요"
           value={formData.confirmPassword}
           onChange={handleChange}
+          onBlur={handleBlur}
         />
         <i
           className={`fa-solid ${

@@ -1,46 +1,65 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const LoginForm = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
+
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [errors, setErrors] = useState({ email: "", password: "" });
 
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
+  const navigate = useNavigate();
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
   };
 
-  const handlePasswordChange = (e) => {
-    setPassword(e.target.value);
+  const handleNavigateToSignup = () => {
+    navigate("/signup");
   };
 
   const togglePasswordVisibility = () => {
-    setIsPasswordVisible(!isPasswordVisible);
+    setIsPasswordVisible((prev) => !prev);
   };
 
-  const validateForm = () => {
-    const newErrors = {};
+  const validateField = (name, value) => {
+    setErrors((prevErrors) => ({
+      ...prevErrors,
+      [name]:
+        name === "email"
+          ? /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)
+            ? ""
+            : "올바른 이메일 형식이 아닙니다."
+          : name === "password"
+          ? /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(
+              value
+            )
+            ? ""
+            : "영문자, 숫자, 특수기호를 포함해 8~16자리를 입력해주세요."
+          : prevErrors[name],
+    }));
+  };
 
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      newErrors.email = "올바른 이메일 형식이 아닙니다.";
-    }
-
-    const passwordRegex =
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-    if (!passwordRegex.test(password)) {
-      newErrors.password =
-        "영문자, 숫자, 특수기호를 포함해 8~16자리를 입력해주세요.";
-    }
-
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
+  const handleBlur = (e) => {
+    const { name, value } = e.target;
+    validateField(name, value);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (validateForm()) {
-      console.log("로그인 성공", { email, password });
+    const isValid = Object.values(errors).every((error) => !error);
+    if (isValid) {
+      console.log("로그인 성공", formData);
+      setFormData({
+        email: "",
+        password: "",
+      });
     }
   };
 
@@ -66,10 +85,12 @@ const LoginForm = () => {
         <input
           required
           type="text"
+          name="email"
           className="input"
           placeholder="이메일 주소를 입력해주세요."
-          value={email}
-          onChange={handleEmailChange}
+          value={formData.email}
+          onChange={handleChange}
+          onBlur={handleBlur}
         />
       </div>
       <div className="flex-column">
@@ -91,16 +112,18 @@ const LoginForm = () => {
         <input
           required
           type={isPasswordVisible ? "text" : "password"}
+          name="password"
           className="input"
           placeholder="비밀번호를 입력해주세요."
-          value={password}
-          onChange={handlePasswordChange}
+          value={formData.password}
+          onChange={handleChange}
+          onBlur={handleBlur}
         />
         <i
           className={`fa-solid ${
             isPasswordVisible ? "fa-eye-slash" : "fa-eye"
           }`}
-          onClick={togglePasswordVisibility} // 아이콘 클릭 시 비밀번호 표시/숨김
+          onClick={togglePasswordVisibility}
         ></i>
       </div>
       {/* <div className="flex-row">
@@ -113,8 +136,8 @@ const LoginForm = () => {
       <button className="button-submit">로그인</button>
       <p className="p">
         아직 회원이 아니신가요?{" "}
-        <span className="span">
-          <a href="/signup">회원가입</a>
+        <span className="span" onClick={handleNavigateToSignup}>
+          회원가입
         </span>
       </p>
       <p className="p line">Or With</p>
