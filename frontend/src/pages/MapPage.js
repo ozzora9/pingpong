@@ -4,8 +4,9 @@ import MapList from "../components/MapList";
 import StoreModal from "../components/StoreModal";
 import "../styles/MapList.css";
 import "../styles/StoreModal.css";
+import "../styles/Overlay.css";
 
-const MapPage = ({ storeList }) => {
+const MapPage = ({ storeList, filteredStores, searchKeyword }) => {
   const [selectedItem, setSelectedItem] = useState();
   const [center, setCenter] = useState({
     lat: 37.4919681,
@@ -46,12 +47,16 @@ const MapPage = ({ storeList }) => {
     <div style={{ display: "flex" }}>
       <MapList
         list={storeList}
+        filteredStores={filteredStores}
+        searchKeyword={searchKeyword}
         onSelectItem={setSelectedItem}
         setCenter={setCenter}
         onOpenModal={handleOpenModal}
       />
       <Maps
         list={storeList}
+        filteredStores={filteredStores}
+        searchKeyword={searchKeyword}
         selectedItem={selectedItem}
         center={center}
         setCenter={setCenter}
@@ -62,6 +67,7 @@ const MapPage = ({ storeList }) => {
           isOpen={isModalOpen}
           onClose={handleCloseModal}
           storeInfo={modalData}
+          searchKeyword={searchKeyword}
         />
       )}
     </div>

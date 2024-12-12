@@ -10,8 +10,8 @@ import MapPage from "./pages/MapPage";
 import TastePage from "./pages/TastePage";
 import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
-import CarouselPage from "./pages/CarouselPage";
 import "./styles/NavBar.css";
+
 const storeList = [
   {
     id: 0,
@@ -20,7 +20,7 @@ const storeList = [
     num: "063-445-2772",
     lat: 35.98715192,
     lng: 126.7112342,
-    src: "/res/images/store/bread_img.jpg",
+    src: "/res/images/store/gunsan.jpg",
   },
   {
     id: 1,
@@ -29,7 +29,7 @@ const storeList = [
     num: "032-746-2244",
     lat: 37.4919681,
     lng: 126.5813687,
-    src: "/res/images/store/bread_img.jpg",
+    src: "/res/images/store/salted.jpg",
   },
   {
     id: 2,
@@ -38,7 +38,7 @@ const storeList = [
     num: "1588-8069",
     lat: 36.3277658,
     lng: 127.427359,
-    src: "/res/images/store/bread_img.jpg",
+    src: "/res/images/store/daejeon.jpg",
   },
   {
     id: 3,
@@ -47,25 +47,25 @@ const storeList = [
     num: "010-6705-0064",
     lat: 33.4059201,
     lng: 126.2564901,
-    src: "/res/images/store/bread_img.jpg",
+    src: "/res/images/store/umu(2).jpg",
   },
   {
     id: 4,
-    name: "아마",
-    sub: "제주특별자치도 제주시 한림읍 한림로 542-1",
-    num: "010-6705-0064",
-    lat: 33.4059201,
-    lng: 126.2564901,
-    src: "/res/images/store/bread_img.jpg",
+    name: "백구당",
+    sub: "부산광역시 중구 중앙동4가 31-1",
+    num: "051-465-0109",
+    lat: 35.104807040631,
+    lng: 129.035737319999,
+    src: "/res/images/store/109.jpeg",
   },
   {
     id: 5,
-    name: "우리",
-    sub: "제주특별자치도 제주시 한림읍 한림로 542-1",
-    num: "010-6705-0064",
-    lat: 33.4059201,
-    lng: 126.2564901,
-    src: "/res/images/store/bread_img.jpg",
+    name: "태극당",
+    sub: "서울특별시 중구 동호로24길 7",
+    num: "02-2279-3152",
+    lat: 37.5595217348788,
+    lng: 127.005087759017,
+    src: "/res/images/store/korea.jpg",
   },
 ];
 
@@ -86,7 +86,6 @@ const App = () => {
           <Route path="/taste" element={<TastePage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignupPage />} />
-          <Route path="/carousel" element={<CarouselPage />} />
         </Routes>
       </div>
     </Router>

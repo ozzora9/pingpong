@@ -5,7 +5,7 @@ const CardSmall = ({ store }) => {
         <div className="card-title">{store.name}</div>
         <div className="card-sub">{store.sub}</div>
       </div>
-      <img src="./res/images/store/bread_img.jpg" alt="" />
+      <img src={store.src} alt="" />
     </a>
   );
 };

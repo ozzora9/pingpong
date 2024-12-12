@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const SearchBar = () => {
+const SearchBar = ({ onSearch }) => {
   const txtList = [
     "군산 월명동 빵집",
     "전북대 근처 빵집",
@@ -10,6 +10,8 @@ const SearchBar = () => {
   const [count, setCount] = useState(0);
   const [idx, setIdx] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
+
+  const [inputValue, setInputValue] = useState("");
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -48,6 +50,8 @@ const SearchBar = () => {
           type="text"
           className="search-txt"
           placeholder={text}
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)}
         />
       </div>
     </div>

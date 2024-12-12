@@ -99,6 +99,7 @@
   background-color: #eee;
   border-radius: 16px;
   margin-right: 12px;
+  object-fit: cover;
 }
 .store-name {
   font-size: 20px;
@@ -147,4 +148,34 @@
 
 .fa-location-crosshairs {
   font-size: 24px;
+}
+
+.addModal-backdrop {
+  width: 100vw;
+  height: 100vh;
+  z-index: 9990;
+  background: #555;
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.addModal-container {
+  padding: 24px;
+  z-index: 9999;
+  background-color: #eee;
+  width: 400px;
+  height: 600px;
+  opacity: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.fa-xmark {
+  cursor: pointer;
+  margin: 12px;
 }

@@ -6,7 +6,10 @@
   width: 380px;
   border: 1px solid #d9d9d9;
   border-radius: 16px;
-  overflow: hidden;
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 .modal-header {
   position: fixed;
@@ -14,8 +17,9 @@
   justify-content: space-between;
   align-items: center;
   width: inherit;
-  padding: 12px 24px;
+  padding: 4px 16px 0 24px;
   z-index: 5000;
+  /* position: fixed; */
   & i {
     cursor: pointer;
     color: white;
@@ -52,8 +56,12 @@
     content: "";
   }
 }
+.modal-content {
+  padding: 16px 24px;
+  display: flex;
+  flex-direction: column;
+}
 .modal-title {
-  padding: 16px 0 0 24px;
   font-size: 24px;
   font-weight: 700;
 }
@@ -73,10 +81,68 @@
 }
 
 .star {
-  padding: 16px 24px 0 0;
+  padding-top: 8px;
 }
+
 .star i {
   cursor: pointer;
   font-size: 24px;
   color: #ffc62e;
+}
+
+.division hr {
+  margin-top: 24px;
+  margin-bottom: 24px;
+  border-width: 1.5px 0 0 0;
+}
+
+.storeModal-favBread {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  gap: 5px;
+  margin-top: 20px;
+}
+.storeModal-favBread i {
+  margin-right: 4px;
+}
+.shareBox {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 32px;
+  height: 84px;
+  border-radius: 12px;
+  background-color: #f4f4f4;
+}
+.shareItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  text-align: center;
+  width: 33%;
+}
+.shareItem i {
+  font-size: 20px;
+  cursor: pointer;
+}
+.shareItem span {
+  margin-top: 6px;
+  font-size: 15px;
+  color: #555;
+}
+
+.shareItem:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  width: 1px;
+  height: 100%;
+  background-color: #bababa;
+}
+
+.modal-sub {
+  font-size: 16px;
+  font-weight: 600;
 }
