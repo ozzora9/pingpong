@@ -3,16 +3,42 @@ body::-webkit-scrollbar {
 }
 
 .main-page {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  /* width: 100vw; */
   height: calc(100vh - 136px);
-  /* 허전함 + 스크롤 가능 알리기 */
-  overflow-y: scroll;
   scrollbar-width: none;
+  overflow: hidden;
 }
 
 .card-sm {
   background-color: #f9fafb;
+}
+
+@keyframes bounce-and-fade {
+  0% {
+    transform: translateY(0);
+    opacity: 0.1; /* 더 흐린 시작 */
+  }
+  50% {
+    transform: translateY(8px); /* 아래로 이동 */
+    opacity: 0.4; /* 완전히 불투명 */
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 0.1; /* 부드러운 마무리 */
+  }
+}
+
+.fa-angles-down {
+  position: absolute;
+  bottom: 32px;
+  font-size: 2rem; /* 아이콘 크기 */
+  color: #555; /* 색상 */
+  animation: bounce-and-fade 2s infinite; /* 2초 동안 반복 */
+  margin-top: 20px; /* 적절한 여백 */
+  display: block;
+  text-align: center;
+  opacity: 0.4; /* 기본 흐림 상태 */
 }

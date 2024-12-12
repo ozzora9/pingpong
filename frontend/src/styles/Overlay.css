@@ -1,0 +1,93 @@
+.overlay-wrap {
+  width: 328px;
+  height: 148px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+}
+
+.overlay-info {
+  padding: 10px;
+}
+
+.overlay-title {
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+}
+
+.overlay-close {
+  font-size: 12px;
+  cursor: pointer;
+  color: black;
+}
+
+.overlay-close:hover {
+  color: #000;
+}
+
+.overlay-body {
+  display: flex;
+  margin-top: 10px;
+}
+
+.overlay-img img {
+  width: 84px;
+  height: 84px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.overlay-desc {
+  margin-top: 4px;
+  margin-left: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+.overlay-ellipsis {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: keep-all;
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+.overlay-link {
+  color: blue;
+  text-decoration: underline;
+  margin-top: 5px;
+  font-size: 12px;
+}
+
+.overlay-link:hover {
+  color: #0056b3;
+  text-decoration: none;
+}
+
+.overlay-favBread {
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 5px;
+}
+
+.overlay-mood {
+  font-size: 14px;
+  font-weight: 600;
+  color: #bababa;
+  text-decoration: underline;
+}

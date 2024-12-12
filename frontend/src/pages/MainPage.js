@@ -19,11 +19,11 @@ const generateBreads = (count) => {
   for (let i = 0; i < count; i++) {
     const randomImage =
       breadImages[Math.floor(Math.random() * breadImages.length)];
-    const randomLeft = Math.random() * 100; // 랜덤 위치
-    const randomSize = Math.random() * 20 + 35; // 크기: 30px~50px
-    const randomDuration = Math.random() * 5 + 6; // 속도: 6~11초
-    const randomDelay = Math.random() * 3; // 딜레이: 0~3초
-    const randomRotate = Math.random() * 360; // 랜덤 회전 각도
+    const randomLeft = Math.random() * 100;
+    const randomSize = Math.random() * 20 + 35;
+    const randomDuration = Math.random() * 5 + 6;
+    const randomDelay = Math.random() * 3;
+    const randomRotate = Math.random() * 360;
 
     breads.push(
       <img
@@ -36,7 +36,7 @@ const generateBreads = (count) => {
           width: `${randomSize}px`,
           animationDuration: `${randomDuration}s`,
           animationDelay: `${randomDelay}s`,
-          "--rotate": `${randomRotate}deg`, // 랜덤 회전
+          "--rotate": `${randomRotate}deg`,
         }}
       />
     );
@@ -44,13 +44,20 @@ const generateBreads = (count) => {
   return breads;
 };
 
+const getRandomStore = (storeList, count) => {
+  const randomStore = [...storeList].sort(() => 0.5 - Math.random());
+  return randomStore.slice(0, count);
+};
+
 const MainPage = ({ storeList }) => {
+  const randomStores = getRandomStore(storeList, 4);
   return (
     <div className="container">
       <div className="content main-page">
         <h1 className="title">집 근처 빵집을 찾고 있다면?</h1>
-        <SearchBar />
         {generateBreads(10)}
+        <SearchBar />
+        <i class="fa-solid fa-angles-down"></i>
       </div>
       <div className="content card-sm">
         <h3 className="subtitle">
@@ -59,7 +66,7 @@ const MainPage = ({ storeList }) => {
         </h3>
         <p className="note">다른 사람들의 원픽 빵 엿보기 👀</p>
         <div className="card-box">
-          {storeList.map((store) => {
+          {randomStores.map((store) => {
             return <CardSm store={store} key={store.id} />;
           })}
         </div>

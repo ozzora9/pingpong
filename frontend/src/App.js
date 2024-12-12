@@ -11,9 +11,7 @@ import TastePage from "./pages/TastePage";
 import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
 import CarouselPage from "./pages/CarouselPage";
-import Footer from "./components/Footer";
 import "./styles/NavBar.css";
-import "./styles/Footer.css";
 const storeList = [
   {
     id: 0,
@@ -51,6 +49,24 @@ const storeList = [
     lng: 126.2564901,
     src: "/res/images/store/bread_img.jpg",
   },
+  {
+    id: 4,
+    name: "아마",
+    sub: "제주특별자치도 제주시 한림읍 한림로 542-1",
+    num: "010-6705-0064",
+    lat: 33.4059201,
+    lng: 126.2564901,
+    src: "/res/images/store/bread_img.jpg",
+  },
+  {
+    id: 5,
+    name: "우리",
+    sub: "제주특별자치도 제주시 한림읍 한림로 542-1",
+    num: "010-6705-0064",
+    lat: 33.4059201,
+    lng: 126.2564901,
+    src: "/res/images/store/bread_img.jpg",
+  },
 ];
 
 const App = () => {
@@ -72,7 +88,6 @@ const App = () => {
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/carousel" element={<CarouselPage />} />
         </Routes>
-        <Footer />
       </div>
     </Router>
   );

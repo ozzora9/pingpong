@@ -140,7 +140,7 @@ const LoginForm = () => {
           회원가입
         </span>
       </p>
-      <p className="p line">Or With</p>
+      {/* <p className="p line">Or With</p>
       <div className="flex-row">
         <img
           className="btn kakao"
@@ -148,10 +148,10 @@ const LoginForm = () => {
           height={"100%"}
           width={"100%"}
           borderradius={"5px"}
-          src=".\res\images\kakao_login_large_wide.png"
+          src=".\res\images\etc\kakao_login_large_wide.png"
           alt=""
         />
-      </div>
+      </div> */}
     </form>
   );
 };
