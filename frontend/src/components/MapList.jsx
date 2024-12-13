@@ -85,7 +85,13 @@ const MapList = ({ list, setCenter, onOpenModal, addStore }) => {
 
   // 확인 버튼 클릭 시
   const handleConfirm = () => {
-    if (newStoreInfo.lat && newStoreInfo.lng && newStoreInfo.src) {
+    if (
+      newStoreInfo.name &&
+      newStoreInfo.num &&
+      newStoreInfo.lat &&
+      newStoreInfo.lng &&
+      newStoreInfo.src
+    ) {
       addStore({
         ...newStoreInfo,
         id: list.length, // 고유 ID 생성 (실제로는 UUID 등 사용 권장)
@@ -111,7 +117,7 @@ const MapList = ({ list, setCenter, onOpenModal, addStore }) => {
     if (!window.kakao) {
       const script = document.createElement("script");
       script.async = true;
-      script.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=YOUR_APP_KEY&libraries=services&autoload=false`;
+      script.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.REACT_APP_KAKAOMAP_JS_KEY}&libraries=services&autoload=false`;
       document.head.appendChild(script);
 
       script.onload = () => {
@@ -190,6 +196,32 @@ const MapList = ({ list, setCenter, onOpenModal, addStore }) => {
             ></i>
             <h2 className="addModal-title">빵집 추가하기</h2>
             <div className="addModal-body">
+              <label htmlFor="name">가게 이름:</label>
+              <input
+                type="text"
+                id="name"
+                value={newStoreInfo.name}
+                onChange={(e) =>
+                  setNewStoreInfo({
+                    ...newStoreInfo,
+                    name: e.target.value,
+                  })
+                }
+                placeholder="가게 이름을 입력하세요"
+              />
+              <label htmlFor="num">전화번호:</label>
+              <input
+                type="text"
+                id="num"
+                value={newStoreInfo.num}
+                onChange={(e) =>
+                  setNewStoreInfo({
+                    ...newStoreInfo,
+                    num: e.target.value,
+                  })
+                }
+                placeholder="전화번호를 입력하세요"
+              />
               <label htmlFor="address">주소:</label>
               <input
                 type="text"
@@ -227,6 +259,8 @@ const MapList = ({ list, setCenter, onOpenModal, addStore }) => {
               <button
                 onClick={handleConfirm}
                 disabled={
+                  !newStoreInfo.name ||
+                  !newStoreInfo.num ||
                   !newStoreInfo.lat ||
                   !newStoreInfo.lng ||
                   !newStoreInfo.src

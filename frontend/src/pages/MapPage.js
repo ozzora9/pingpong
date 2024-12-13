@@ -6,7 +6,12 @@ import "../styles/MapList.css";
 import "../styles/StoreModal.css";
 import "../styles/Overlay.css";
 
-const MapPage = ({ storeList, filteredStores, searchKeyword }) => {
+const MapPage = ({
+  storeList,
+  filteredStores,
+  searchKeyword,
+  addStore,
+}) => {
   const [selectedItem, setSelectedItem] = useState();
   const [center, setCenter] = useState({
     lat: 37.4919681,
@@ -46,6 +51,7 @@ const MapPage = ({ storeList, filteredStores, searchKeyword }) => {
   return (
     <div style={{ display: "flex" }}>
       <MapList
+        addStore={addStore}
         list={storeList}
         filteredStores={filteredStores}
         searchKeyword={searchKeyword}

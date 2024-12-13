@@ -11,8 +11,9 @@ import TastePage from "./pages/TastePage";
 import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
 import "./styles/NavBar.css";
+import { useEffect, useState } from "react";
 
-const storeList = [
+const initialStoreList = [
   {
     id: 0,
     name: "이성당",
@@ -70,6 +71,24 @@ const storeList = [
 ];
 
 const App = () => {
+  const [storeList, setStoreList] = useState(initialStoreList);
+
+  useEffect(() => {
+    const storedList = localStorage.getItem("storeList");
+    if (storedList) {
+      setStoreList(JSON.parse(storedList));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("storeList", JSON.stringify(storeList));
+    console.log("saved", storeList);
+  }, [storeList]);
+
+  const addStore = (newStore) => {
+    setStoreList([...storeList, newStore]);
+  };
+
   return (
     <Router>
       <div className="App">
@@ -81,7 +100,9 @@ const App = () => {
           />
           <Route
             path="/map"
-            element={<MapPage storeList={storeList} />}
+            element={
+              <MapPage storeList={storeList} addStore={addStore} />
+            }
           />
           <Route path="/taste" element={<TastePage />} />
           <Route path="/login" element={<LoginPage />} />
